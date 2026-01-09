@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tugas Akhir Kriptografi</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <header>
+    <h1 class="glitch" data-text="🔐 Tugas Akhir Kriptografi">🔐 Tugas Akhir Kriptografi</h1>
+    <p>Dendy Pratama - NPM 2255201198</p>
+  </header>
+
+  <div class="card">
+
+    <label>Metode Kriptografi</label>
+    <select id="method" onchange="showInputs()">
+      <option>Caesar</option>
+      <option>Vigenere</option>
+      <option>Hill</option>
+      <option>RSA</option>
+      <option>RSA Dokumen</option>
+      <option>AES</option>
+      <option>AES Dokumen</option>
+    </select>
+
+    <div class="key-box" id="keyBox"></div>
+
+    <div class="info-box" id="infoBox"></div>
+
+    <input type="file" id="fileInput" accept=".txt" hidden>
+
+    <label>Input</label>
+    <textarea id="inputText" placeholder="Masukkan teks..."></textarea>
+
+    <div class="buttons">
+      <button class="btn primary" onclick="process('encrypt')">Enkripsi</button>
+      <button class="btn success" onclick="process('decrypt')">Dekripsi</button>
+      <button class="btn warning" onclick="downloadResult()">Download</button>
+    </div>
+
+    <label>Output</label>
+    <textarea id="outputText" readonly></textarea>
+
+  </div>
+
+  <footer>
+    <small>© 2026</small>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

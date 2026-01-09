@@ -1,0 +1,209 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+/* BACKGROUND KEAMANAN */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  min-height: 100vh;
+  color: #e5e7eb;
+}
+
+/* WRAPPER */
+.wrapper {
+  max-width: 820px;
+  margin: auto;
+  padding: 30px 15px;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+header p {
+  font-size: 14px;
+  opacity: 0.85;
+  color: #94a3b8;
+}
+
+/* ================= GLITCH CYBER TITLE ================= */
+
+.glitch {
+  position: relative;
+  font-size: 40px;
+  font-weight: 800;
+  color: #e5e7eb;
+  letter-spacing: 1px;
+  animation: glitch-flicker 3s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.glitch::before {
+  color: #22d3ee;
+  z-index: -1;
+  animation: glitch-left 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  color: #f43f5e;
+  z-index: -2;
+  animation: glitch-right 1.8s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-flicker {
+  0%, 100% { opacity: 1; }
+  2% { opacity: 0.8; }
+  4% { opacity: 1; }
+}
+
+@keyframes glitch-left {
+  0% { clip-path: inset(0 0 85% 0); transform: translate(-2px, -1px); }
+  25% { clip-path: inset(15% 0 55% 0); transform: translate(2px, 1px); }
+  50% { clip-path: inset(40% 0 30% 0); transform: translate(-1px, 2px); }
+  75% { clip-path: inset(65% 0 10% 0); transform: translate(1px, -1px); }
+  100% { clip-path: inset(0 0 85% 0); transform: translate(0); }
+}
+
+@keyframes glitch-right {
+  0% { clip-path: inset(85% 0 0 0); transform: translate(2px, 1px); }
+  25% { clip-path: inset(55% 0 15% 0); transform: translate(-2px, -1px); }
+  50% { clip-path: inset(30% 0 40% 0); transform: translate(1px, -2px); }
+  75% { clip-path: inset(10% 0 65% 0); transform: translate(-1px, 2px); }
+  100% { clip-path: inset(85% 0 0 0); transform: translate(0); }
+}
+
+/* ================= CARD ================= */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 0 40px rgba(34,211,238,0.08);
+  animation: fadeUp 0.8s ease-out;
+}
+
+/* FORM */
+label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+select, input, textarea {
+  width: 100%;
+  padding: 11px;
+  margin-top: 6px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 14px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 3px rgba(34,211,238,0.25);
+}
+
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* INFO */
+.info-box {
+  background: rgba(34,211,238,0.08);
+  border-left: 4px solid #22d3ee;
+  padding: 12px;
+  font-size: 13px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  color: #e0f2fe;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.btn {
+  flex: 1;
+  padding: 11px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #020617;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.6);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.primary {
+  background: linear-gradient(135deg, #22d3ee, #38bdf8);
+}
+
+.success {
+  background: linear-gradient(135deg, #34d399, #10b981);
+}
+
+.warning {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+/* OUTPUT */
+#outputText {
+  background: #020617;
+  transition: background 0.3s ease;
+}
+
+#outputText:not(:empty) {
+  background: rgba(34,211,238,0.06);
+}
+
+/* KEY INPUT */
+.key-box input {
+  width: 48%;
+  display: inline-block;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin-top: 15px;
+  color: #94a3b8;
+  font-size: 13px;
+}
